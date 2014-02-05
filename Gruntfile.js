@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 				timeout: 15000
 			},
 			client: {
-				src: ['./lib/client/index.js']
+				src: ['./lib/client/spec/index.js']
 			},
 		}
 	});
