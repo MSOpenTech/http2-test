@@ -11,16 +11,19 @@ module.exports = function(grunt) {
 		},
 		mochaTest: {
 			options: {
-				reporter: 'spec',
-				timeout: 20000
+				reporter: 'dot',
+				timeout: 8000
 			},
 			client: {
 				src: ['./lib/client/**/*.spec.js']
+			},
+			server: {
+				src: ['./lib/server/index.js']
 			},
 		}
 	});
 
 	grunt.registerTask('build', ['jshint']);
-	grunt.registerTask('test', ['build', 'mochaTest:client']);
+	grunt.registerTask('test', ['build', 'mochaTest:client', 'mochaTest:server']);
 	grunt.registerTask('default', ['test']);
 };
